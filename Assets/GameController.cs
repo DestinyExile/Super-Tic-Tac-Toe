@@ -18,6 +18,11 @@ public class GameController : MonoBehaviour
         {
             resetGame();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void resetGame()
