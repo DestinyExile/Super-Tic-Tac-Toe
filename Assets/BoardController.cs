@@ -16,12 +16,17 @@ public class BoardController : MonoBehaviour
     [SerializeField] GameObject xMarker = null;
     [SerializeField] GameObject oMarker = null;
 
+    public static bool boardWon = false;
+
     private void Update()
     {
-        checkWin();
+        if(!boardWon)
+        {
+            checkWin();
+        }
     }
 
-    private void checkWin()
+    public void checkWin()
     {
         //horizontal first row
         if (Slot1.slotState == Slot2.slotState && Slot2.slotState == Slot3.slotState)
@@ -29,10 +34,12 @@ public class BoardController : MonoBehaviour
             if (Slot1.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot1.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -42,10 +49,12 @@ public class BoardController : MonoBehaviour
             if (Slot4.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot4.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -55,10 +64,12 @@ public class BoardController : MonoBehaviour
             if (Slot7.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot7.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -68,10 +79,12 @@ public class BoardController : MonoBehaviour
             if (Slot1.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot1.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -81,10 +94,12 @@ public class BoardController : MonoBehaviour
             if (Slot2.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot2.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -94,10 +109,12 @@ public class BoardController : MonoBehaviour
             if (Slot3.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot3.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -107,10 +124,12 @@ public class BoardController : MonoBehaviour
             if (Slot1.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot1.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
 
@@ -120,11 +139,18 @@ public class BoardController : MonoBehaviour
             if (Slot3.slotState == 1)
             {
                 xMarker.SetActive(true);
+                boardWon = true;
             }
             if (Slot3.slotState == 2)
             {
                 oMarker.SetActive(true);
+                boardWon = true;
             }
         }
+    }
+
+    public bool checkWinState()
+    {
+        return boardWon;
     }
 }

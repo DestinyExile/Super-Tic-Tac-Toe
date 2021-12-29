@@ -40,4 +40,9 @@ public class SlotController : MonoBehaviour
 
         TurnController.changeTurn();
     }
+
+    public void sendSlot()
+    {
+        BoardEnabler.previousSlot = this.gameObject.name;
+    }
 }
